@@ -8,7 +8,7 @@ function loadFileRequest(uri) {
   const file = fileManager.get(fileIndex);
 
   return new Promise((resolve, reject) => {
-    //const fileReader = new FileReader();
+    // const fileReader = new FileReader();
 
     fs.readFile(file, { encoding: null }, (err, data) => {
       if (err) {
@@ -17,15 +17,15 @@ function loadFileRequest(uri) {
       const dicomPart10AsArrayBuffer = data;
       resolve(dicomPart10AsArrayBuffer);
     });
-    fileReader.onload = (e) => {
-      const dicomPart10AsArrayBuffer = e.target.result;
+    // fileReader.onload = (e) => {
+    // const dicomPart10AsArrayBuffer = e.target.result;
 
-      resolve(dicomPart10AsArrayBuffer);
-    };
+    // resolve(dicomPart10AsArrayBuffer);
+    // };
 
-    //fileReader.onerror = reject;
+    // fileReader.onerror = reject;
 
-    //fileReader.readAsArrayBuffer(file);
+    // fileReader.readAsArrayBuffer(file);
   });
 }
 
